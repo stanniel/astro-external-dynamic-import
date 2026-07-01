@@ -2,7 +2,7 @@
 
 ## Summary
 
-External dynamic imports in <script> tags cause ReferenceError: __VITE_PRELOAD__ is not defined at runtime in Astro 7
+External dynamic imports in <script> tags cause `ReferenceError: __VITE_PRELOAD__ is not defined` at runtime in Astro 7
 
 ## Steps to reproduce
 
