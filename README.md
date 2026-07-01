@@ -1,43 +1,25 @@
-# Astro Starter Kit: Minimal
+# Astro External Dynamic Import: Bug Minimal Reproducible Example
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+## Summary
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+External dynamic imports in <script> tags cause ReferenceError: __VITE_PRELOAD__ is not defined at runtime in Astro 7
 
-## 🚀 Project Structure
+## Steps to reproduce
 
-Inside of your Astro project, you'll see the following folders and files:
+1. clone the project
+2. run `astro build`
+3. inspect the build output `index.html` - `__VITE_PRELOAD__` appears unreplaced
+4. run `astro preview` and open the site in a browser, the console should say `ReferenceError: __VITE_PRELOAD__ is not defined`
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Astro info
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Key             | Value         |
+| --------------- | ------------- |
+| Astro           | v7.0.5        |
+| Vite            | v8.1.2        |
+| Node            | v22.22.1      |
+| System          | macOS (arm64) |
+| Package Manager | pnpm          |
+| Output          | static        |
+| Adapter         | none          |
+| Integrations    | none          |
