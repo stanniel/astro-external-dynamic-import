@@ -10,7 +10,7 @@ External dynamic imports in <script> tags cause `ReferenceError: __VITE_PRELOAD_
 2. install dependencies: `pnpm i`
 2. build the project: `pnpm run build`
 3. inspect the build output `index.html` - `__VITE_PRELOAD__` appears unreplaced
-4. run `astro preview` and open the site in a browser, the console should say `ReferenceError: __VITE_PRELOAD__ is not defined`
+4. open the project in a browser: `pnpm run preview`, the browser dev console should say `ReferenceError: __VITE_PRELOAD__ is not defined`
 
 ## Astro info
 
